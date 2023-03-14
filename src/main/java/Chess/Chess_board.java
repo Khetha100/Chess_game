@@ -12,12 +12,27 @@ public class Chess_board {
         JPanel panel = new JPanel(){
             @Override
             public void paint(Graphics g){
-                super.paint(g);
+//                super.paint(g);
+                boolean white = true;
+                for (int i = 0;i<8;i++){
+                   for (int j = 0; j<8;j++){
+                        if (white) {
+                            g.setColor(Color.white);
+                        }
+                        else{
+                            g.setColor(Color.black);
+                        }
+                        g.fillRect(i*64,j*64,64,64);
+                        white=!white;
+                   }
+                   white =!white;
+                }
           }
+
 
         };
         frame.add(panel);
-        frame.setDefaultCloseOperation(5);
+        frame.setDefaultCloseOperation(2);
         frame.setVisible(true);
 
     }
