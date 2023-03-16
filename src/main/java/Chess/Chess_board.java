@@ -33,7 +33,7 @@ public class Chess_board {
 
         };
         frame.add(panel);
-        frame.setDefaultCloseOperation(3);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
 
     }
