@@ -19,10 +19,10 @@ public class Pieces {
 //        image.createGraphics();
         int rows = 6;
         int columns = 2;
-        BufferedImage img[] = new BufferedImage[32];
-        int sub_image_width = image.getWidth();
-        int sub_image_height = image.getHeight();
-//        System.out.println(image);
+        BufferedImage[] img = new BufferedImage[32];
+        int sub_image_width = image.getWidth()/6;
+        int sub_image_height = image.getHeight()/2;
+        System.out.println(image);
 
 //        public void show(){
 //
@@ -30,7 +30,11 @@ public class Pieces {
         int image_current = 0;
         for (int i=0; i<rows;i++){
             for (int j =0; j<columns; j++){
-                img[image_current] = new BufferedImage(sub_image_width,sub_image_height,image.getType());
+                System.out.println(sub_image_height);
+                System.out.println(sub_image_width);
+                System.out.println(image.getType());
+//                img[image_current] = new BufferedImage(sub_image_width,sub_image_height,image.getType());
+                img[image_current] = new BufferedImage(sub_image_width,sub_image_height,5);
                 Graphics2D created_img = img[image_current].createGraphics();
 
                 int source_first_x = sub_image_width*j;
@@ -44,6 +48,7 @@ public class Pieces {
             }
         }
         for (int i = 0; i< 32;i++){
+            System.out.println(i);
             File outputFile = new File("img" + i + ".jpg");
             ImageIO.write(img[i], "jpg", outputFile);
         }
