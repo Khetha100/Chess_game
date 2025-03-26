@@ -10,8 +10,6 @@ import java.io.IOException;
 public class Pieces {
 
 
-
-
     public static BufferedImage image;
 //    BufferedImage image = null;
     public static void main(String[] args) throws IOException {
