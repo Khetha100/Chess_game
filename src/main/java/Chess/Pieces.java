@@ -23,11 +23,10 @@ public class Pieces {
         System.out.println(image);
 
 //        public void show(){
-//
 //        }
         int image_current = 0;
-        for (int i=0; i<rows;i++){
-            for (int j =0; j<columns; j++){
+        for (int i=0; i<columns;i++){
+            for (int j =0; j<rows; j++){
                 System.out.println(sub_image_height);
                 System.out.println(sub_image_width);
                 System.out.println(image.getType());
@@ -47,8 +46,8 @@ public class Pieces {
         }
         for (int i = 0; i< 32;i++){
             System.out.println(i);
-            File outputFile = new File("img" + i + ".jpg");
-            ImageIO.write(img[i], "jpg", outputFile);
+            File outputFile = new File("img" + i + ".png");
+            ImageIO.write(img[i], "png", outputFile);
         }
 //        System.out.println();
 
