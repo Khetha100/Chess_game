@@ -11,8 +11,8 @@ import java.util.Random;
 public class SelectAndDragTest extends JPanel {
 
     private static final String TITLE = "House";
-    private static final int W = 640;
-    private static final int H = 480;
+    private static final int W = 512;
+    private static final int H = 512;
 //    public static Random random = new Random();
     public static Point objPt = new Point(W / 2, H / 2);
     private Point mousePt;
@@ -42,15 +42,6 @@ public class SelectAndDragTest extends JPanel {
             }
         });
 
-//        btnAdd = new JButton("Add new house");
-//        btnAdd.addActionListener(new ActionListener() {
-//            public void actionPerformed(ActionEvent evt) {
-//                house = new House(objPt.x, objPt.y);
-////                addHouse(house);
-//
-//            }
-//        });
-//        this.add(btnAdd);
     }
 
 
