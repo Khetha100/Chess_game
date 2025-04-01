@@ -59,7 +59,8 @@ public class SelectAndDragTest extends JPanel {
         }
 
         House onehouse = new House(objPt.x, objPt.y);
-        onehouse.paint(g);
+        // This paints a house at the coordinates of objPt !!!
+//        onehouse.paint(g);
     }
 
 //    public void addHouse(House house) {

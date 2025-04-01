@@ -9,6 +9,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PanelClass extends JPanel {
@@ -20,6 +21,7 @@ public class PanelClass extends JPanel {
 
 
 //    public static Point objPt = new Point(W / 2, H / 2);
+    List<Point> ptList = new ArrayList<>();
     private Point mousePt;
 
     public PanelClass() {
