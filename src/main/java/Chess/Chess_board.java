@@ -22,7 +22,9 @@ public class Chess_board {
             @Override
             public void run() {
                 JFrame f = new JFrame(TITLE);
-                f.add(new PanelClass());
+                PanelClass panelClass = new PanelClass();
+                System.out.println(panelClass);
+                f.add(panelClass);
                 f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 f.pack();
                 f.setLocationRelativeTo(null);

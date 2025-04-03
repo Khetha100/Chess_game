@@ -14,74 +14,95 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Piece extends JPanel {
+public class Piece  {
 
-    List<Image> listOfPieces = new ArrayList<>();
-    Rectangle r;
+//    List<Image> listOfPieces = new ArrayList<>();
+    int x, y;
 
-    public Piece(){
+    public Piece(int x, int y){
+        this.x = x;
+        this.y = y;
 
+//        System.out.println(x);
+//        System.out.println(y);
     }
 
-    public void setRect(int x, int y) {
-        r.x = x;
-        r.y = y;
-        repaint();
+//    public void paint(Graphics g){
+//        Image image = null;
+//        boolean white = true;
+////        for (int i = 0;i<8;i++){
+////            for (int j = 0; j<8;j++){
+//
+//                if (white) {
+//                    if (checkSpaceFilling( 64/2, 64/2) != null) {
+////                    if (checkSpaceFilling(i * 64, j * 64) != null) {
+//
+////                        File sourceimage = new File("./pieces/" + checkSpaceFilling(i * 64, j * 64));
+//                        File sourceimage = new File("./pieces/" + checkSpaceFilling( 64/2, 64/2));
+//
+//                        try {
+//                            image = ImageIO.read(sourceimage);
+////                            g.drawImage(image.getScaledInstance(64, 64, 64), i * 64, j * 64, null);
+//                            g.drawImage(image.getScaledInstance(64, 64, 64), 64/2, 64/2, null);
+//
+//                        } catch (IOException e) {
+//                            throw new RuntimeException(e);
+//                        }
+//                    }
+//                    g.setColor(Color.white.darker());
+//
+//                }
+//                else{
+////                    g.fillRect(i*64,j*64,64,64);
+//                    g.fillRect(64/2,64/2,64,64);
+////                            System.out.println("at grey space");
+//                    if (checkSpaceFilling(64/2, 64/2) != null) {
+////                                System.out.println("at not null grey space");
+//                        File sourceimage = new File("./pieces/" + checkSpaceFilling(64/2, 64/2));
+//
+//                        try {
+//                            image = ImageIO.read(sourceimage);
+//                            g.drawImage(image.getScaledInstance(64, 64, 64), 64/2, 64/2, null);
+//
+////                            DragHandler handler = new DragHandler(test);
+////                            test.addMouseListener(handler);
+////                            test.addMouseMotionListener(handler);
+//
+//                        } catch (IOException e) {
+//                            throw new RuntimeException(e);
+//                        }
+//                    }
+//
+//                    g.setColor(Color.gray.darker());
+//
+//
+//                }
+//
+//
+////                white=!white;
+////            }
+////            white =!white;
+////        }
+//    }
+
+
+public void paint (Graphics page) {
+    Image image = null;
+
+    if (checkSpaceFilling(x, y) != null) {
+
+
+    File sourceimage = new File("./pieces/" + checkSpaceFilling(x, y));
+//    System.out.println(sourceimage);
+    try {
+        image = ImageIO.read(sourceimage);
+    } catch (IOException e) {
+        throw new RuntimeException(e);
+    }
+    page.drawImage(image.getScaledInstance(64, 64, 64), x, y, null);
     }
 
-    public void paint(Graphics g){
-        Image image = null;
-        boolean white = true;
-        for (int i = 0;i<8;i++){
-            for (int j = 0; j<8;j++){
-
-                if (white) {
-                    if (checkSpaceFilling(i * 64, j * 64) != null) {
-
-                        File sourceimage = new File("./pieces/" + checkSpaceFilling(i * 64, j * 64));
-
-                        try {
-                            image = ImageIO.read(sourceimage);
-                            g.drawImage(image.getScaledInstance(64, 64, 64), i * 64, j * 64, null);
-
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
-                        }
-                    }
-                    g.setColor(Color.white.darker());
-
-                }
-                else{
-                    g.fillRect(i*64,j*64,64,64);
-//                            System.out.println("at grey space");
-                    if (checkSpaceFilling(i * 64, j * 64) != null) {
-//                                System.out.println("at not null grey space");
-                        File sourceimage = new File("./pieces/" + checkSpaceFilling(i * 64, j * 64));
-
-                        try {
-                            image = ImageIO.read(sourceimage);
-                            g.drawImage(image.getScaledInstance(64, 64, 64), i * 64, j * 64, null);
-
-//                            DragHandler handler = new DragHandler(test);
-//                            test.addMouseListener(handler);
-//                            test.addMouseMotionListener(handler);
-
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
-                        }
-                    }
-
-                    g.setColor(Color.gray.darker());
-
-
-                }
-
-
-                white=!white;
-            }
-            white =!white;
-        }
-    }
+}
 
     public static String checkSpaceFilling(int currentWidth, int currentHeight){
         java.util.List<Integer> widhtList = java.util.List.of(0, 64, 128, 192, 256, 320, 384, 448);

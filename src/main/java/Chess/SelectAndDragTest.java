@@ -14,7 +14,7 @@ public class SelectAndDragTest extends JPanel {
     private static final int W = 512;
     private static final int H = 512;
 //    public static Random random = new Random();
-    public static Point objPt = new Point(W / 2, H / 2);
+    public static Point objPt = new Point(64 / 2, 64 / 2);
     private Point mousePt;
 //    House house;
 //    public static JButton btnAdd;
@@ -29,6 +29,8 @@ public class SelectAndDragTest extends JPanel {
                 repaint();
             }
         });
+
+        System.out.println(this);
 
         this.addMouseMotionListener(new MouseMotionAdapter() {
 
@@ -60,7 +62,7 @@ public class SelectAndDragTest extends JPanel {
 
         House onehouse = new House(objPt.x, objPt.y);
         // This paints a house at the coordinates of objPt !!!
-//        onehouse.paint(g);
+        onehouse.paint(g);
     }
 
 //    public void addHouse(House house) {
@@ -75,7 +77,9 @@ public class SelectAndDragTest extends JPanel {
             @Override
             public void run() {
                 JFrame f = new JFrame(TITLE);
-                f.add(new SelectAndDragTest());
+                SelectAndDragTest obj = new SelectAndDragTest();
+                System.out.println(obj);
+                f.add(obj);
                 f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 f.pack();
                 f.setLocationRelativeTo(null);
