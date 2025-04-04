@@ -39,6 +39,8 @@ public class SelectAndDragTest extends JPanel {
                 int dx = e.getX() - mousePt.x;
                 int dy = e.getY() - mousePt.y;
                 objPt.setLocation(objPt.x + dx, objPt.y + dy);
+                System.out.println(objPt.x);
+                System.out.println(objPt.y);
                 mousePt = e.getPoint();
                 repaint();
             }

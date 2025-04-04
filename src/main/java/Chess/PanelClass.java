@@ -16,8 +16,8 @@ import java.util.List;
 //    private static final int H = 512;
 ////    Rectangle r;
 //    Image image = null;
-//
-//
+
+
 //    public static Point objPt = new Point(64 / 2, 64 / 2);
 //    List<Point> ptList = new ArrayList<>();
 //    private Point mousePt;
@@ -207,7 +207,7 @@ public class PanelClass extends JPanel {
 //    public static JButton btnAdd;
 
     public PanelClass() {
-//        this.setFont(new Font("Sans Serif", Font.BOLD, 12));
+//        this.setFont(new Font("Sans Serif", Font.BOLD, 12));m
         this.addMouseListener(new MouseAdapter() {
 
             @Override
@@ -252,14 +252,14 @@ public class PanelClass extends JPanel {
         }
 
         boolean white = true;
-        for (int i = 0;i<8;i++){
-            for (int j = 0; j<8;j++) {
+//        for (int i = 0;i<8;i++){
+//            for (int j = 0; j<8;j++) {
 
                 if (white) {
 
 //                    System.out.println(objPt.x);
 //                    System.out.println(objPt.y);
-                    objPt = new Point(i*64,j*64);
+//                    objPt = new Point(0,0);
                     Piece onehouse = new Piece(objPt.x, objPt.y);
 //                Piece onehouse = new Piece(i * 64, j * 64);
                     // This paints a house at the coordinates of objPt !!!
@@ -268,8 +268,8 @@ public class PanelClass extends JPanel {
 
                 }
                 else{
-                    g.fillRect(i*64,j*64,64,64);
-                    objPt = new Point(i*64,j*64);
+                    g.fillRect(64,64,64,64);
+//                    objPt = new Point(0,0);
                     Piece onehouse = new Piece(objPt.x, objPt.y);
 //                Piece onehouse = new Piece(i * 64, j * 64);
                     // This paints a house at the coordinates of objPt !!!
@@ -279,9 +279,9 @@ public class PanelClass extends JPanel {
                 }
                 white=!white;
 
-            }
-            white =!white;
-        }
+//            }
+//            white =!white;
+//        }
     }
 
 

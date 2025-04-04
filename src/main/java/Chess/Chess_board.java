@@ -11,7 +11,7 @@ public class Chess_board {
 //        JFrame frame = new JFrame();
 //        frame.setBounds(10, 10, 512, 512);
 //        frame.setUndecorated(true);
-//
+
 //        PanelClass panel = new PanelClass();
 //        frame.add(panel);
 //        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
